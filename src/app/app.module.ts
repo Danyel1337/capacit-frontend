@@ -14,6 +14,13 @@ import { ActualizarClienteComponent } from './components/cliente/actualizar-clie
 import { ListarPedidosComponent } from './components/pedido/listar-pedidos/listar-pedidos.component';
 import { ListarCustomersComponent } from './components/customers/listar-customers/listar-customers.component';
 import { ProductoComponent } from './components/producto/producto/producto.component';
+import { ListarDepartamentosComponent } from './components/departamentos/listar-departamentos/listar-departamentos/listar-departamentos.component';
+import { DetalleDepartamentosComponent } from './components/departamentos/detalle-departamentos/detalle-departamentos/detalle-departamentos.component';
+import { ActualizarDepartamentosComponent } from './components/departamentos/actualizar-departamentos/actualizar-departamentos/actualizar-departamentos.component';
+import { RegistrarDepartamentosComponent } from './components/departamentos/registrar-departamentos/registrar-departamentos/registrar-departamentos.component';
+
+// Importación del módulo de paginación
+import { NgxPaginationModule } from 'ngx-pagination'; // Importación para paginación
 
 @NgModule({
   declarations: [
@@ -26,13 +33,18 @@ import { ProductoComponent } from './components/producto/producto/producto.compo
     ActualizarClienteComponent,
     ListarPedidosComponent,
     ListarCustomersComponent,
-    ProductoComponent
+    ProductoComponent,
+    ListarDepartamentosComponent,
+    DetalleDepartamentosComponent,
+    ActualizarDepartamentosComponent,
+    RegistrarDepartamentosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, //se importa modulo para peticiones HTTP
-    FormsModule
+    FormsModule,
+    NgxPaginationModule // Módulo agregado para la paginación
   ],
   providers: [],
   bootstrap: [AppComponent]

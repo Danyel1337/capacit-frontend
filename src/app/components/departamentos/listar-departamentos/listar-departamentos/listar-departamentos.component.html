@@ -1,0 +1,26 @@
+<h3>Listar departamentos</h3>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Departamento</th>
+            <th>ID empleado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let departamento of departamentos | paginate: { itemsPerPage: 10, currentPage: page }">
+            <td>{{departamento.id}}</td>
+            <td>{{departamento.departamento}}</td>
+            <td>{{departamento.managerid}}</td>
+            <td>
+                <button (click)="actualizarDepartamento(departamento.id)" class="btn btn-info">Actualizar</button>
+                <button (click)="eliminarDepartamento(departamento.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+                <button (click)="detallesdepartamento(departamento.id)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Controles de paginación -->
+<pagination-controls (pageChange)="page = $event"></pagination-controls>

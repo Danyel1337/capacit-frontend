@@ -1,0 +1,34 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Editar registro</h3>
+    <form (ngSubmit)="onSubmit()" #departamentosForm="ngForm">
+        <br>
+        <div class="form-group">
+            <label>Departamento : </label>
+            <input type="text" class="form-control" id="departamento" [(ngModel)]="departamentos.departamento" name="departamento" required minlength="2" maxlength="20" placeholder="Digite el departamento" #departamento="ngModel">
+            <div class="alert alert-danger" *ngIf="departamento.invalid && (departamento.dirty || departamento.touched)">
+                <div *ngIf="departamento.errors.required">
+                    Digite el departamento por favor
+                </div>
+                <div *ngIf="departamento.errors.minlength">
+                    El departamento debe contener minimo 2 caracteres
+                </div>
+                <div *ngIf="departamento.errors.maxlength">
+                    El departamento debe contener minimo 20 caracteres
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>ID empleado : </label>
+            <input type="number" class="form-control" id="managerid" [(ngModel)]="departamentos.managerid" name="managerid" required placeholder="Digite su salario maximo" #managerid="ngModel">
+            <div class="alert alert-danger" *ngIf="managerid.invalid && (managerid.dirty || managerid.touched)">
+                <div *ngIf="managerid.errors.required">
+                    Digite el salario maximo por favor
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <button class="btn btn-success" [disabled]="!departamentosForm.form.valid">Guardar</button>
+    </form>
+</div>

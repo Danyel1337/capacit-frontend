@@ -7,6 +7,12 @@ import { DetalleEmpleadoComponent } from './components/empleado/detalle-empleado
 import { ListarClientesComponent } from './components/cliente/listar-clientes/listar-clientes.component';
 import { ActualizarClienteComponent } from './components/cliente/actualizar-cliente/actualizar-cliente.component';
 import { ListarPedidosComponent } from './components/pedido/listar-pedidos/listar-pedidos.component';
+import { ListarDepartamentosComponent } from './components/departamentos/listar-departamentos/listar-departamentos/listar-departamentos.component';
+import { DetalleDepartamentosComponent } from './components/departamentos/detalle-departamentos/detalle-departamentos/detalle-departamentos.component';
+import { ActualizarDepartamentosComponent } from './components/departamentos/actualizar-departamentos/actualizar-departamentos/actualizar-departamentos.component';
+import { RegistrarDepartamentosComponent } from './components/departamentos/registrar-departamentos/registrar-departamentos/registrar-departamentos.component';
+
+
 
 //aqui se configuran las rutas URL a donde tienen que redireccionar (componentes)
 const routes: Routes = [
@@ -17,7 +23,11 @@ const routes: Routes = [
   {path : 'detalle-empleado/:id',component : DetalleEmpleadoComponent},
   {path : 'clientes', component:ListarClientesComponent},
   {path : 'actualizar-cliente/:id', component : ActualizarClienteComponent},
-  {path : 'pedidos', component : ListarPedidosComponent}
+  {path : 'pedidos', component : ListarPedidosComponent},
+  {path : 'lista-departamentos', component : ListarDepartamentosComponent},
+  {path : 'detalle-departamento/:id', component : DetalleDepartamentosComponent },
+  {path : 'actualizar-departamento/:id', component : ActualizarDepartamentosComponent },
+  {path : 'registrar-departamento',component : RegistrarDepartamentosComponent}
 ];
 
 @NgModule({
